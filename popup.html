@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Bookmark Extension</title>
+  <script src="popup.js"></script>
+  <script src="bookmarks.js"></script> <!-- Add this line to include the bookmarks.js file -->
+
+</head>
+
+<body>
+  <form id="bookmarkForm">
+    <label for="titleInput">Title:</label>
+    <input type="text" id="titleInput" required><br>
+
+    <label for="descriptionInput">Description:</label>
+    <textarea id="descriptionInput" rows="4" cols="50"></textarea><br>
+
+    <label for="tagsInput">Tags:</label>
+    <input type="text" id="tagsInput"><br>
+
+    <button type="submit">Add Bookmark</button>
+  </form>
+
+  <ul id="bookmarksList"></ul>
+
+  <a href="bookmarks.html" target="_blank">View All Bookmarks</a>
+</body>
+
+</html>
