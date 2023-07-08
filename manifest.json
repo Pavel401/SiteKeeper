@@ -1,9 +1,14 @@
 {
-  "name": "My YT Bookmarks",
+  "name": "SiteKeeper",
   "version": "0.1.0",
-  "description": "Saving timestamps in YT videos",
+  "description": "SiteKeeper is a simple bookmark management extension designed to safeguard and organize your favorite websites. With SiteKeeper, you can effortlessly bookmark, store, and categorize web pages, ensuring easy access and efficient organization.",
+  "icons": {
+    "16": "assets/logo.png",
+    "24": "assets/logo.png",
+    "32": "assets/logo.png"
+  },
   "permissions": ["storage", "tabs"],
-  "host_permissions": ["https://*.youtube.com/*"],
+  "host_permissions": [],
   "background": {
     "service_worker": "background.js"
   },
@@ -16,21 +21,19 @@
   "web_accessible_resources": [
     {
       "resources": [
-        "assets/bookmark.png",
-        "assets/play.png",
-        "assets/delete.png",
-        "assets/save.png"
+        "assets/logo.png"
+     
       ],
       "matches": ["https://*.youtube.com/*"]
     }
   ],
   "action": {
     "default_icon": {
-      "16": "assets/ext-icon.png",
-      "24": "assets/ext-icon.png",
-      "32": "assets/ext-icon.png"
+      "16": "assets/logo.png",
+      "24": "assets/logo.png",
+      "32": "assets/logo.png"
     },
-    "default_title": "My YT Bookmarks",
+    "default_title": "SiteKeeper",
     "default_popup": "popup.html"
   },
   "manifest_version": 3
