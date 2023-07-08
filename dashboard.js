@@ -1,9 +1,46 @@
+const body = document.querySelector("body"),
+      modeToggle = body.querySelector(".mode-toggle");
+      sidebar = body.querySelector("nav");
+      sidebarToggle = body.querySelector(".sidebar-toggle");
+
+let getMode = localStorage.getItem("mode");
+if(getMode && getMode ==="dark"){
+    body.classList.toggle("dark");
+}
+
+let getStatus = localStorage.getItem("status");
+if(getStatus && getStatus ==="close"){
+    sidebar.classList.toggle("close");
+}
+
+modeToggle.addEventListener("click", () =>{
+    body.classList.toggle("dark");
+    if(body.classList.contains("dark")){
+        localStorage.setItem("mode", "dark");
+    }else{
+        localStorage.setItem("mode", "light");
+    }
+});
+
+sidebarToggle.addEventListener("click", () => {
+    sidebar.classList.toggle("close");
+    if(sidebar.classList.contains("close")){
+        localStorage.setItem("status", "close");
+    }else{
+        localStorage.setItem("status", "open");
+    }
+})
+
+
+
+
 document.addEventListener('DOMContentLoaded', function() {
     refreshBookmarksTable();
   });
   
   // Function to refresh the bookmarks table
-  function refreshBookmarksTable() {
+ // Function to refresh the bookmarks table
+function refreshBookmarksTable() {
     chrome.storage.sync.get({ bookmarks: [] }, function(result) {
       var bookmarks = result.bookmarks;
       var tableBody = document.getElementById('bookmarksTableBody');
@@ -33,11 +70,18 @@ document.addEventListener('DOMContentLoaded', function() {
         row.appendChild(timeCell);
   
         var tagsCell = document.createElement('td');
-        tagsCell.textContent = bookmark.tags;
+        var tags = bookmark.tags.split(','); // Assuming tags are separated by commas
+        tags.forEach(function(tag) {
+          var chip = document.createElement('span');
+          chip.classList.add('tag-chip');
+          chip.textContent = tag.trim();
+          tagsCell.appendChild(chip);
+        });
         row.appendChild(tagsCell);
   
         tableBody.appendChild(row);
       });
     });
   }
+  
   
