@@ -19,7 +19,11 @@
     --box2-color: #FFE6AC;
     --box3-color: #E7D1FC;
     --title-icon-color: #fff;
-    
+    --tag-color-light: #f2f2f2;
+    --tag-text-color-light: #000;
+    --table-cell-background-light: #FFF;
+    --table-cell-text-color-light: #000;
+        --url-color: #FFF;
     /* ====== Transition ====== */
     --tran-05: all 0.5s ease;
     --tran-03: all 0.3s ease;
@@ -41,6 +45,10 @@ body.dark{
     --box2-color: #3A3B3C;
     --box3-color: #3A3B3C;
     --title-icon-color: #CCC;
+    --tag-color-dark: #333;
+    --tag-text-color-dark: #FFF;
+    --table-cell-background-dark: #3A3B3C;
+    --table-cell-text-color-dark: #FFFF;
 }
 /* === Custom Scroll Bar CSS === */
 ::-webkit-scrollbar {
@@ -340,59 +348,27 @@ nav.close ~ .dashboard .top{
     align-items: center;
     width: 100%;
 }
-.activity-data {
+.activity .activity-data{
     display: flex;
-    overflow-x: auto; /* Add horizontal scroll */
-  }
-  
-  .activity-data .data {
+}
+.activity-data .data{
     display: flex;
     flex-direction: column;
     margin: 0 15px;
-    white-space: nowrap; /* Prevent line breaks in data */
-  }
-  
-  .activity-data .data-title {
+}
+.activity-data .data-title{
     font-size: 20px;
     font-weight: 500;
     color: var(--text-color);
-    white-space: nowrap; /* Prevent line breaks in title */
-  }
-  
-  .activity-data .data .data-list {
+}
+.activity-data .data .data-list{
     font-size: 18px;
     font-weight: 400;
     margin-top: 20px;
+    white-space: nowrap;
     color: var(--text-color);
-    white-space: nowrap; /* Prevent line breaks in data list */
-  }
-  
+}
 
-
-
-  /* table border and cell border */
-  .bookmarks-table {
-    border-collapse: separate;
-    border-spacing: 0;
-    width: 100%;
-  }
-  
-  .bookmarks-table th,
-  .bookmarks-table td {
-    padding: 10px;
-    border: 1px solid #ccc;
-    text-align: left;
-  }
- 
-  
-  .bookmarks-table th {
-    background-color: #f2f2f2;
-  }
-  
-  .bookmarks-table td {
-    background-color: #fff;
-  }
-  
 @media (max-width: 1000px) {
     nav{
         width: 73px;
@@ -490,11 +466,56 @@ nav.close ~ .dashboard .top{
 }
 
 
-/* chip style */
-.tag-chip {
-    display: inline-block;
-    padding: 4px 8px;
-    margin-right: 4px;
-    background-color:  #f2f2f2;
-    border-radius: 4px;
-  }
+.bookmarks-table th,
+.bookmarks-table td {
+    padding: 10px;
+    
+    border: 1px solid #ccc;
+    text-align: left;
+    background-color: #f2f2f2;
+    color: #fff; /* White color for links in dark mode */
+
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: 20px;
+    color: var(--text-color);
+    white-space: nowrap; /* Prevent line breaks in data list */
+}
+
+
+
+body.dark .tag-chip {
+    background-color: var(--tag-color-dark);
+    color: var(--tag-text-color-dark);
+}
+
+body.dark .bookmarks-table th,
+body.dark .bookmarks-table td {
+    background-color: var(--primary-color-dark);
+    color: var(--table-cell-text-color-dark);
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: 20px;
+    white-space: nowrap; /* Prevent line breaks in data list */
+}
+
+body.light .tag-chip {
+    background-color: var(--tag-color-light);
+    color: var(--tag-text-color-light);
+}
+
+body.light .bookmarks-table th,
+body.light .bookmarks-table td {
+    background-color: var(--table-cell-background-light);
+    color: var(--table-cell-text-color-light);
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: 20px;
+  
+    white-space: nowrap; /* Prevent line breaks in data list */
+}
+
+
+.table-container {
+    overflow-x: auto;
+}
