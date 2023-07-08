@@ -1,12 +1,20 @@
-.container {
-  width: 280px;
-  color: #314d3e;
+
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-family: "Poppins", sans-serif; /* Apply Poppins font to the labels */
 
-
-
-
+}
 .remove-bookmark {
   margin-left: 5px;
   color: red;
@@ -73,22 +81,21 @@
   justify-content: center;
   align-items: start;
   height: 200vh;
+  font-family: "Poppins", sans-serif; /* Apply Poppins font to the container */
+
 }
 
 
 /* card css */
 .card {
-  /* Add shadows to create the "card" effect */
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
-  border-radius: 10px; /* 5px rounded corners */
-  margin: 0 auto; /* Center the card horizontally */
-  padding: 20px; /* Add padding to the card */
-  box-sizing: border-box; /* Add box-sizing to include padding in the width */
-  margin-top: 20px; /* Add margin around the card */
-  margin-bottom: 20px;
+  text-align: left;
+  border-radius: 10px;
+  margin: 20px; /* Add margin around the card */
+  padding: 20px;
+  box-sizing: border-box;
 }
-
 /* On mouse-over, add a deeper shadow */
 .card:hover {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
@@ -109,7 +116,7 @@
 form {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: left;
 }
 
 /* Add some spacing between form elements */
@@ -142,7 +149,7 @@ a {
  /* Style the button container */
  .button-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   
 }
 
@@ -173,4 +180,133 @@ a {
   border: none;
   border-radius: 10px;
   cursor: pointer;
+}
+/* textarea {
+  height: 30px; resize: none;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+} */
+
+input[type="text"] {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+
+ textarea {
+  resize: none;
+  border-radius: 5px;
+
+
+  border: 1px solid #ccc;
+  
+}
+
+/* input{
+  border-radius: 5px;
+  
+  width: 100%;  border: 1px solid #ccc;
+} */ */
+
+ p {
+  font-size: 1.5rem;
+  color: #333;
+  font-weight: 500;
+  text-align: center;
+}
+
+
+
+
+::selection{
+  color: #fff;
+  background: #5372F0;
+}
+.wrapper{
+  width: 496px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 18px 25px 20px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.06);
+}
+.wrapper :where(.title, li, li i, .details){
+  display: flex;
+  align-items: center;
+}
+.title img{
+  max-width: 21px;
+}
+.title h2{
+  font-size: 21px;
+  font-weight: 600;
+  margin-left: 8px;
+}
+.wrapper .content{
+  margin: 10px 0;
+}
+.content p{
+  font-size: 15px;
+}
+.content ul{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 7px;
+  margin: 12px 0;
+  border-radius: 5px;
+  border: 1px solid #a6a6a6;
+}
+.content ul  li{
+  color: #333;
+  margin: 4px 3px;
+  list-style: none;
+  border-radius: 5px;
+  background: #F2F2F2;
+  padding: 5px 8px 5px 10px;
+  border: 1px solid #e3e1e1;
+}
+.content ul li i{
+  height: 20px;
+  width: 20px;
+  color: #808080;
+  margin-left: 8px;
+  font-size: 12px;
+  cursor: pointer;
+  border-radius: 50%;
+  background: #dfdfdf;
+  justify-content: center;
+}
+.content ul input{
+  flex: 1;
+  padding: 5px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+}
+.wrapper .details{
+  justify-content: space-between;
+}
+.details button{
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 9px 15px;
+  border-radius: 5px;
+  background: #5372F0;
+  transition: background 0.3s ease;
+}
+.details button:hover{
+  background: #2c52ed;
+}
+
+#viewBookmarksLink {
+  color: #337ab7;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+#viewBookmarksLink:hover {
+  color: #23527c;
 }
