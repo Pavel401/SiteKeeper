@@ -3,28 +3,40 @@
 
 <head>
   <title>Bookmark Extension</title>
-  <script src="popup.js"></script>
-  <script src="bookmarks.js"></script> <!-- Add this line to include the bookmarks.js file -->
-
+  <link rel="stylesheet" href="popup.css">
 </head>
 
 <body>
-  <form id="bookmarkForm">
-    <label for="titleInput">Title:</label>
-    <input type="text" id="titleInput" required><br>
 
-    <label for="descriptionInput">Description:</label>
-    <textarea id="descriptionInput" rows="4" cols="50"></textarea><br>
+  <div class="card">
+    <p style=" font-size: 1.5rem;
+    color: #333;
+    font-weight: 500;
+    text-align: center;">Sitekeeper</p>
 
-    <label for="tagsInput">Tags:</label>
-    <input type="text" id="tagsInput"><br>
+    <form id="bookmarkForm">
+      <div>
+        <label for="titleInput">Title:</label>
+        <input type="text" id="titleInput" placeholder="Enter title" required><br>
 
-    <button type="submit">Add Bookmark</button>
-  </form>
+        <label for="descriptionInput">Description:</label>
+        <textarea id="descriptionInput" rows="5" cols="50" placeholder="Enter description"></textarea><br>
 
-  <ul id="bookmarksList"></ul>
+        <label for="tagsInput">Tags:</label>
+        <input type="text" id="tagsInput" placeholder="Enter tags"><br>
 
-  <a href="bookmarks.html" target="_blank">View All Bookmarks</a>
+        <div class="button-container">
+          <button type="submit">Add Bookmark</button>
+        </div>
+
+        <a href="bookmarks.html" id="viewBookmarksLink" target="_blank">View All Bookmarks</a>
+
+      </div>
+    </form>
+  </div>
+
+
+  <script src="popup.js"></script>
 </body>
 
 </html>
