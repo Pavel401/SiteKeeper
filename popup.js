@@ -48,8 +48,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Function to display bookmarks in a list view
 function displayBookmarks(bookmarks) {
-  var bookmarksList = document.getElementById('bookmarksList');
-  bookmarksList.innerHTML = '';
+  // var bookmarksList = document.getElementById('bookmarksList');
+  // bookmarksList.innerHTML = '';
 
   bookmarks.forEach(function(bookmark) {
     var listItem = document.createElement('li');
